@@ -1,0 +1,27 @@
+{
+  "name": "WebSaver",
+  "description": "This extension will allow you to save any web page to your local machine and then go back to the live page.",
+  "version": "0.1",
+  "permissions": [
+    "<all_urls>",
+    "pageCapture",
+    "tabs",
+    "storage"
+  ],
+  "icons": {
+    "16": "assets/save.png",
+    "48": "assets/save.png",
+    "128": "assets/save.png"
+  },
+  "browser_action": {
+    "name": "Download Page"
+  },
+  "manifest_version": 2,
+  "background": {
+    "scripts": [
+      "assets/jquery-3.1.1.min.js",
+      "assets/md5.min.js",
+      "background.js"
+    ]
+  }
+}
