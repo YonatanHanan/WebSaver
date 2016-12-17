@@ -4,20 +4,8 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var app = express();
 
-app.use(bodyParser.json({ limit: '50mb' }));
-app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
-
-app.get('/Chrome/doesExitst/:md5_url', function(req, res) {
-    var rootpath = __dirname.replace(/\\/g, "/");
-
-    console.log(req.params.md5_url);
-    if (fs.existsSync("mhtml/" + req.params.md5_url + ".mhtml")) {
-        console.log("exists");
-        res.send({ state: true, location: rootpath + "/mhtml/" + req.params.md5_url + ".mhtml" });
-    } else {
-        res.send({ state: false });
-    }
-});
+app.use(bodyParser.json({ limit: '20mb' }));
+app.use(bodyParser.urlencoded({ limit: '20mb', extended: true }));
 
 app.post('/Chrome/save', function(req, res) {
 
